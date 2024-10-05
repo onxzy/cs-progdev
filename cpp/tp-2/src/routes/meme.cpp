@@ -16,7 +16,7 @@ namespace http::router::route::meme {
   }
 
   const bool Meme::matches(const request::Request& req) const {
-    return this->getRoute(req).compare("/meme") == 0;
+    return req.getVerb() == request::Verb::GET && this->getRoute(req).compare("/meme") == 0;
   }
 
   const response::Response& Meme::operator()(const request::Request& req) {

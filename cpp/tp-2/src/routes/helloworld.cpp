@@ -4,7 +4,7 @@ namespace http::router::route::helloWorld {
   using namespace http;
 
   const bool HelloWorld::matches(const request::Request& req) const {
-    return this->getRoute(req).compare("/") == 0;
+    return req.getVerb() == request::Verb::GET && this->getRoute(req).compare("/") == 0;
   }
 
   const response::Response& HelloWorld::operator()(const request::Request& req) {
