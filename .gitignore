@@ -1,0 +1,12 @@
+# Ignore builds (extension less files)
+*
+!*/
+!*.*
+!**/Makefile
+
+# IDE
+.vscode
+
+# School material
+**/*.pdf
+*/examples*
