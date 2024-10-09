@@ -9,7 +9,7 @@ g++ -Wall --std=c++17  src/**/*.cpp -o server
 
 # Run 
 
-1. You can start the server with the following command. The server will listen on port `5555`
+1. You can start the server with the following command. The server will listen on port `5555`. The server must be in the same folder as `meme.jpeg` for the `/meme` route to work.
 
 ```shell
 ./server
