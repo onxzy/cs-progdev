@@ -10,6 +10,8 @@
 #include "response.h"
 #include "router.h"
 #include "routes/helloworld.h"
+#include "routes/hiyou.h"
+#include "routes/sum.h"
 #include "routes/meme.h"
 
 using namespace boost;
@@ -25,7 +27,11 @@ namespace http {
 		router::Router router;
 		router.addRoute(std::make_unique<router::route::helloWorld::HelloWorld>());
 		router.addRoute(std::make_unique<router::route::meme::Meme>());
-		std::cout << "Router initied with " << router.nbRoutes() << " routes" << std::endl;
+		router.addRoute(std::make_unique<router::route::hiyou::Hiyou>());
+		router.addRoute(std::make_unique<router::route::sum::Sum>());
+
+
+		std::cout << "Router initiated with " << router.nbRoutes() << " routes" << std::endl;
 
 		while (true) { // infinite loop, as long as clients connect or something crashes
 
